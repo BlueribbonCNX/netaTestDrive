@@ -20,7 +20,7 @@ switch($_GET['type']){
 			exit;
 		}
 
-		echo true;
+		echo $link;
 		
 	break;
 

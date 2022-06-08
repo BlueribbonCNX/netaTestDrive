@@ -172,16 +172,7 @@
   <script>
 
     async function connect(){
-      $.ajax({
-      async: false,
-      data: 'type=connect',
-      url: 'query.php',
-      method: 'GET', // or GET
-        success: function(msg) {
-          temp = msg.substr(0,msg.length);
-          console.log("connection="+temp);
-        }
-      });
+      
     }
 
     async function registered(u_id){
@@ -256,20 +247,28 @@
     async function main() {
       await liff.init({ liffId: "1657200437-oLMxZnek" })
 
-      if(connect()){
-        console.log("connected");
-      }else{
-        console.log("not connected");
-      }
+      $.ajax({
+      async: false,
+      data: 'type=connect',
+      url: 'query.php',
+      method: 'GET', // or GET
+        success: function(msg) {
+          temp = msg.substr(0,msg.length);
+          console.log(temp);
+        }
+      });
       
       
-      if(registered()){
-        console.log("registered");
-      }else{
-        console.log("Not registered");
-        getEnvironment()
+      getEnvironment()
         getUserProfile()
-      }
+
+      // if(registered()){
+      //   console.log("registered");
+      // }else{
+      //   console.log("Not registered");
+      //   getEnvironment()
+      //   getUserProfile()
+      // }
       
       // getContext()
       // getFriendship()
