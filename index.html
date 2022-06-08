@@ -244,7 +244,7 @@
         document.getElementById("statusMessage").append(profile.statusMessage)
         document.getElementById("displayName").append(profile.displayName)
         document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
-        document.getElementById("cus_email").append(liff.getDecodedIDToken().email)
+        document.getElementById("cus_email").value = liff.getDecodedIDToken().email
         
     }
 
