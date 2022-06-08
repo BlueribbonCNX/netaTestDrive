@@ -17,7 +17,7 @@
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
-  <p id="statusMessage"><b>statusMessage:</b> </p>
+  <p id="statusMessage"><b>statusMessage:</b> </p>  
   <p id="decodedIDToken"><b>email:</b> </p>
   <p id="type"><b>type:</b> </p>
   <p id="viewType"><b>viewType:</b> </p>
@@ -170,6 +170,35 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
+
+    function connect(){
+      $.ajax({
+      async: false,
+      data: 'st_id=' + temp +'&type=connect',
+      url: 'query.php',
+      method: 'GET', // or GET
+        success: function(msg) {
+          temp = msg.substr(0,msg.length);
+          temp2 = temp.split("|");		
+        }
+      });
+    }
+
+    function registered(u_id){
+      const profile = await liff.getProfile()
+      $.ajax({
+      async: false,
+      data: 'u_id=' + profile.userId +'&type=registered',
+      url: 'query.php',
+      method: 'GET', // or GET
+        success: function(msg) {
+          temp = msg.substr(0,msg.length);
+          temp2 = temp.split("|");		
+        }
+      });
+    }
+
+
     function createUniversalLink() {
     }
 
@@ -225,8 +254,14 @@
 
     async function main() {
       await liff.init({ liffId: "1657200437-oLMxZnek" })
-      getEnvironment()
-      getUserProfile()
+
+      if(registered()){
+
+      }else{
+        getEnvironment()
+        getUserProfile()
+      }
+      
       // getContext()
       // getFriendship()
       // createUniversalLink()
