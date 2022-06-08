@@ -171,10 +171,10 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
 
-    function connect(){
+    async function connect(){
       $.ajax({
       async: false,
-      data: 'st_id=' + temp +'&type=connect',
+      data: 'type=connect',
       url: 'query.php',
       method: 'GET', // or GET
         success: function(msg) {
@@ -259,7 +259,7 @@
         console.log("connected");
       }else{
         console.log("not connected");
-        
+
       }
       if(registered()){
         console.log("registered");
