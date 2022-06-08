@@ -247,20 +247,11 @@
     async function main() {
       await liff.init({ liffId: "1657200437-oLMxZnek" })
 
-      $.ajax({
-      async: false,
-      data: 'type=connect',
-      url: 'query.php',
-      method: 'GET', // or GET
-        success: function(msg) {
-          temp = msg.substr(0,msg.length);
-          console.log(temp);
-        }
-      });
+      
       
       
       getEnvironment()
-        getUserProfile()
+      getUserProfile()
 
       // if(registered()){
       //   console.log("registered");
