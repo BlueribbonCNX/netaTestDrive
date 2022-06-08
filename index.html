@@ -172,7 +172,16 @@
   <script>
 
     async function connect(){
-     
+      $.ajax({
+      async: false,
+      data: 'type=connect',
+      url: 'query.php',
+      method: 'GET', // or GET
+        success: function(msg) {
+          temp = msg.substr(0,msg.length);
+          console.log("connection="+temp);
+        }
+      });
     }
 
     async function registered(u_id){
@@ -247,16 +256,12 @@
     async function main() {
       await liff.init({ liffId: "1657200437-oLMxZnek" })
 
-      $.ajax({
-      async: false,
-      data: 'type=connect',
-      url: 'query.php',
-      method: 'GET', // or GET
-        success: function(msg) {
-          temp = msg.substr(0,msg.length);
-          console.log("connection="+temp);
-        }
-      });
+      if(connect()){
+        console.log("connected");
+      }else{
+        console.log("not connected");
+      }
+      
       
       if(registered()){
         console.log("registered");
