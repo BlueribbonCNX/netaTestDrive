@@ -85,8 +85,8 @@
                     </div>
     
                     <div class="col-12">
-                        <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="cus_email">
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -96,6 +96,10 @@
                     <h4 class="mb-3">จำนวนรถภายในครอบครัว</h4>
     
                     <div class="my-3">
+                        <div class="form-check">
+                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                            <label class="form-check-label" for="credit">ยังไม่มีรถยนต์</label>
+                        </div>
                         <div class="form-check">
                             <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
                             <label class="form-check-label" for="credit">1 คัน</label>
@@ -240,7 +244,7 @@
         document.getElementById("statusMessage").append(profile.statusMessage)
         document.getElementById("displayName").append(profile.displayName)
         document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
-        document.getElementById("email").append(liff.getDecodedIDToken().email)
+        document.getElementById("cus_email").append(liff.getDecodedIDToken().email)
         
     }
 
