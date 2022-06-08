@@ -12,14 +12,15 @@ switch($_GET['type']){
 		$link = mysql_connect($mysql_host, $mysql_username, $mysql_pass);
 		if (!$link) {
 			die('Could not connect: ' . mysql_error());
+			echo 'Could not select database1';
 		}
 
 		if (!mysql_select_db($mysql_db, $link)) {
-			echo 'Could not select database';
+			echo 'Could not select database2';
 			exit;
 		}
 
-		echo $str;
+		echo true;
 		
 	break;
 
