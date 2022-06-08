@@ -171,19 +171,6 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
 
-    function connect(){
-      
-      $.ajax({
-      async: false,
-      data: 'type=connect',
-      url: 'query.php',
-      method: 'GET', // or GET
-        success: function(msg) {
-          temp = msg.substr(0,msg.length);
-          console.log("connection="+temp);
-        }
-      });
-    }
 
     // async function registered(u_id){
     //   const profile = await liff.getProfile()
