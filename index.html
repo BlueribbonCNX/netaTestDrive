@@ -179,7 +179,7 @@
       method: 'GET', // or GET
         success: function(msg) {
           temp = msg.substr(0,msg.length);
-          temp2 = temp.split("|");		
+          console.log(temp);
         }
       });
     }
@@ -256,8 +256,9 @@
       await liff.init({ liffId: "1657200437-oLMxZnek" })
 
       if(registered()){
-
+        console.log("registered");
       }else{
+        console.log("Not registered");
         getEnvironment()
         getUserProfile()
       }
