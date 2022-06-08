@@ -171,24 +171,34 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
 
-    async function connect(){
+    function connect(){
       
-    }
-
-    async function registered(u_id){
-      const profile = await liff.getProfile()
       $.ajax({
       async: false,
-      data: 'u_id=' + profile.userId +'&type=registered',
+      data: 'type=connect',
       url: 'query.php',
       method: 'GET', // or GET
         success: function(msg) {
           temp = msg.substr(0,msg.length);
-          console.log("temp="+temp);
-          return temp;
+          console.log("connection="+temp);
         }
       });
     }
+
+    // async function registered(u_id){
+    //   const profile = await liff.getProfile()
+    //   $.ajax({
+    //   async: false,
+    //   data: 'u_id=' + profile.userId +'&type=registered',
+    //   url: 'query.php',
+    //   method: 'GET', // or GET
+    //     success: function(msg) {
+    //       temp = msg.substr(0,msg.length);
+    //       console.log("temp="+temp);
+    //       return temp;
+    //     }
+    //   });
+    // }
 
 
     function createUniversalLink() {
@@ -246,10 +256,7 @@
 
     async function main() {
       await liff.init({ liffId: "1657200437-oLMxZnek" })
-
-      
-      
-      
+      connect()
       getEnvironment()
       getUserProfile()
 

@@ -5,8 +5,8 @@ switch($_GET['type']){
 	case 'connect':
 
 		$mysql_host = 'localhost';
-		$mysql_username = 'root'; //user
-		$mysql_pass = 'mickey00';
+		$mysql_username = 'mastersi'; //user
+		$mysql_pass = 'montfort47';
 		$mysql_db='mastersi_netacnxlineOA';
 
 		$link = mysql_connect($mysql_host, $mysql_username, $mysql_pass);
@@ -20,7 +20,7 @@ switch($_GET['type']){
 			exit;
 		}
 
-		echo $link;
+		echo "success";
 		
 	break;
 
