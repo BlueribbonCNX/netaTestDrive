@@ -184,7 +184,7 @@
       });
     }
 
-    function registered(u_id){
+    async function registered(u_id){
       const profile = await liff.getProfile()
       $.ajax({
       async: false,
