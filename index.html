@@ -238,7 +238,9 @@
         document.getElementById("pictureUrl").src = profile.pictureUrl
         document.getElementById("userId").append(profile.userId)
         document.getElementById("statusMessage").append(profile.statusMessage)
-        document.getElementById("displayName").append(profile.displayName)        
+        document.getElementById("displayName").append(profile.displayName)
+        document.getElementById("decodedIDToken").append(liff.getDecocdedIDToken.email())
+        
     }
 
     function getEnvironment() {
