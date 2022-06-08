@@ -206,7 +206,7 @@
         method: 'GET', // or GET
         success: function(msg) {
           state = msg.substr(0,msg.length);
-          console.log('user='+state);
+          document.getElementById("universalLink1").append(state);
         }
       });	
     }
