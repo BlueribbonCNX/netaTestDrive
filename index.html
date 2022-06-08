@@ -171,50 +171,6 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
 
-
-    // async function registered(u_id){
-    //   const profile = await liff.getProfile()
-    //   $.ajax({
-    //   async: false,
-    //   data: 'u_id=' + profile.userId +'&type=registered',
-    //   url: 'query.php',
-    //   method: 'GET', // or GET
-    //     success: function(msg) {
-    //       temp = msg.substr(0,msg.length);
-    //       console.log("temp="+temp);
-    //       return temp;
-    //     }
-    //   });
-    // }
-
-
-    function createUniversalLink() {
-    }
-
-    async function shareMsg() {
-    }
-
-    function logOut() {
-    }
-
-    function closed() {
-    }
-
-    async function scanCode() {
-    }
-
-    function openWindow() {
-    }
-
-    async function getFriendship() {
-    }
-
-    async function sendMsg() {
-    }
-
-    function getContext() {
-    }
-
     async function getUserProfile() {
         const profile = await liff.getProfile()
         document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -241,9 +197,23 @@
       }
     }
 
+    function registered(){
+      var user_id = document.getElementById("userId").value;
+      $.ajax({
+        async: false,
+        data: 'user_id=' + user_id +'&type=registered',
+        url: 'query.php',
+        method: 'GET', // or GET
+        success: function(msg) {
+          state = msg.substr(0,msg.length);
+          console.log('user='+state);
+        }
+      });	
+    }
+
     async function main() {
       await liff.init({ liffId: "1657200437-oLMxZnek" })
-      //connect()
+      
       getEnvironment()
       getUserProfile()
 
@@ -263,6 +233,7 @@
   </script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/jquery-min.js"></script>
 
 </body>
 </html>
