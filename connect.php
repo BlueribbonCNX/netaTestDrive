@@ -1,7 +1,7 @@
 <?php
 
 $dbhost='localhost';
-$dbuser ='mastersi_netacnxlineOA';
+$dbuser ='root';
 $dbpassword ='mickey00';
 $dbdatabase= 'mastersi_netacnxlineOA';
 
